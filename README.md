@@ -1,5 +1,5 @@
 
-# Helidon Quickstart MP Example
+# Helidon Movies MicroProfile Example
 
 This example implements a simple Hello World REST service using MicroProfile
 
@@ -36,16 +36,27 @@ java -jar target/helidon-movies.jar
 ## Exercise the application
 
 ```
+curl -X GET http://localhost:8080/movies/
+{}
+curl -X GET http://localhost:8080/movies/2
+{}
+
+curl -X POST http://localhost:8080/movies -d "{\”id\" : 10, \"title\" : \"Kill Bill, Volume 3\", \”year\" : 2021}" -H "Content-Type:application/json"
+{}
+
+curl -X DELETE http://localhost:8080/movies/9
+{}
+
 curl -X GET http://localhost:8080/greet
 {"message":"Hello World!"}
 
-curl -X GET http://localhost:8080/greet/Joe
-{"message":"Hello Joe!"}
+curl -X GET http://localhost:8080/greet/Mike
+{"message":"Hello Mike!"}
 
 curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Hola"}' http://localhost:8080/greet/greeting
 
-curl -X GET http://localhost:8080/greet/Jose
-{"message":"Hola Jose!"}
+curl -X GET http://localhost:8080/greet/Mike
+{"message":"Hola Mike!"}
 ```
 
 ## Try health and metrics
