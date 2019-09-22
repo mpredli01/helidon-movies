@@ -12,25 +12,26 @@ It maintains a list of Quentin Tarantino movies and is based off a similar examp
    or access to a Kubernetes 1.7.4 or newer cluster
 5. Kubectl 1.7.4 or newer for deploying to Kubernetes
 
-Verify prerequisites
+### Verify prerequisites
+
 ```
-java -version
-mvn --version
-docker --version
-minikube version
-kubectl version --short
+$ java -version
+$ mvn --version
+$ docker --version
+$ minikube version
+$ kubectl version --short
 ```
 
 ### Build the project
 
 ```
-mvn package
+$ mvn clean package
 ```
 
 ### Start the application
 
 ```
-java -jar target/helidon-movies.jar
+$ java -jar target/helidon-movies.jar
 ```
 
 ### Exercise the movies application
@@ -143,20 +144,20 @@ $ curl -H 'Accept: application/json' -X GET http://localhost:8080/metrics
 ### Build the Docker image
 
 ```
-docker build -t helidon-movies .
+$ docker build -t helidon-movies .
 ```
 
 ### Start the application with Docker
 
 ```
-docker run --rm -p 8080:8080 helidon-movies:latest
+$ docker run --rm -p 8080:8080 helidon-movies:latest
 ```
 
 ### While the application is running in Docker, deploy the application to Kubernetes
 
 ```
-kubectl cluster-info                     # verify which cluster
-kubectl get pods                         # verify connectivity to cluster
-kubectl create -f app.yaml               # deploy application
-kubectl get service helidon-movies       # verify deployed service
+$ kubectl cluster-info                     # verify which cluster
+$ kubectl get pods                         # verify connectivity to cluster
+$ kubectl create -f app.yaml               # deploy application
+$ kubectl get service helidon-movies       # verify deployed service
 ```
