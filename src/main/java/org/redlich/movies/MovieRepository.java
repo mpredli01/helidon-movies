@@ -20,7 +20,7 @@ public class MovieRepository {
         Movie sixth = Movie.of(6,"Inglourious Basterds",2009);
         Movie seventh = Movie.of(7,"Django Unchained",2012);
         Movie eighth= Movie.of(8,"The Hateful Eight",2015);
-        Movie ninth = Movie.of(9,"Once Unpon a Time...in Hollywood",2019);
+        Movie ninth = Movie.of(9,"Once Upon a Time...in Hollywood",2019);
         data.put(first.getId(),first);
         data.put(second.getId(),second);
         data.put(third.getId(),third);
